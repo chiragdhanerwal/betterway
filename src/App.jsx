@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ProductProvider, useProducts } from './context/ProductContext';
 import { CartProvider } from './context/CartContext';
+import { CurrencyProvider } from './context/CurrencyContext';
 import Header from './components/Header';
 import Filters from './components/Filters';
 import ProductGrid from './components/ProductGrid';
@@ -27,8 +28,10 @@ function App() {
   return (
     <ProductProvider>
       <CartProvider>
-        <MainContent toggleCart={() => setIsCartOpen(true)} />
-        <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+        <CurrencyProvider>
+          <MainContent toggleCart={() => setIsCartOpen(true)} />
+          <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+        </CurrencyProvider>
       </CartProvider>
     </ProductProvider>
   );
