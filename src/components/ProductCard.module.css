@@ -89,7 +89,7 @@
 
 .addButton {
     background-color: var(--primary);
-    color: white;
+    color: var(--primary-fg);
     border: none;
     padding: 0.5rem 0.8rem;
     border-radius: var(--radius);
